@@ -25,7 +25,7 @@ var canvas = document.getElementById("canvas"),
 	limiterTotal = 5,
 	limiterTick = 0,
 	// this will time the auto launches of fireworks, one launch per 80 loop ticks
-	timerTotal = 80,
+	timerTotal = 100,
 	timerTick = 0,
 	mousedown = false,
 	// mouse x coordinate,
@@ -73,8 +73,8 @@ function Firework(sx, sy, tx, ty) {
 		this.coordinates.push([this.x, this.y]);
 	}
 	this.angle = Math.atan2(ty - sy, tx - sx);
-	this.speed = 2;
-	this.acceleration = 1.05;
+	this.speed = 1;
+	this.acceleration = 1.02;
 	this.brightness = random(50, 70);
 	// circle target indicator radius
 	this.targetRadius = 1;
@@ -160,7 +160,7 @@ function Particle(x, y) {
 	this.brightness = random(50, 80);
 	this.alpha = 1;
 	// set how fast the particle fades out
-	this.decay = random(0.015, 0.03);
+	this.decay = random(0.002, 0.01);
 }
 
 // update particle
